@@ -1,15 +1,11 @@
-# lightning
-Plot NLDN lightning strike data
+This utilizes strike data from tarfiles available at ftp://ftp-restricted.ncdc.noaa.gov/data/lightning/
 
-Workflow:
-    Obtain tarfiles from ftp://ftp-restricted.ncdc.noaa.gov/data/lightning/
-    
-    Stage tarfiles in a "homedir"
+Step 1.  Stage tarfiles in a "homedir"
 
-    run ltgTrim to refine area
+Step 2. Run ltgTrim to extract data for lat/lon area of interest area
         (this script decompresses files then writes selected strikes to YYYY.txt files)
 
-    run useProcessedLtg to create DataFrame from trimmed lightning files
+Step 3. Run useProcessedLtg to create DataFrame from trimmed lightning files
         (reads YYYY.txt files, appends them into a dataframe (D) and saves as pickle file)
 
-    run plot_ltg_test extracts from dataframe to plot lightning density
+Step 4. Run plot_ltg_test to extract data from created DataFrame and plot lightning density
